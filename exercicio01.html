@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <p>Insira o sabor da pizza: <input type="text" id="in_sabor"></p>
+    <p>Insira o valor da pizza: <input type="text" id="in_valor"></p>
+    <p>Quantos amigos vão pagar: <input type="text" id="in_qtdAmigos"></p>
+    <button onclick="pedirPizza()">Pedir Pizza</button><br><br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function pedirPizza(){
+        var sabor = in_sabor.value
+        var valor = Number((in_valor.value))
+        var amigos = Number(in_qtdAmigos.value)
+
+        var valorFinal = (valor / amigos)
+
+        div_resultado.innerHTML = `A pizza de ${sabor} custa R$${(valor.toFixed(2))} e cada amigo vai pagar R$${valorFinal.toFixed(2)}`
+    }
+</script>
